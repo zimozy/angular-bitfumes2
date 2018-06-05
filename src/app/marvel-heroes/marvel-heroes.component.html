@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-sm-4 offset-sm-4">
+
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let hero of heroes" [ngClass]="{ 'bg-success text-white' : hero === 'Hulk' }">{{ hero | lowercase }}</li>
+
+      <li class="list-group-item">
+        <button class="btn btn-info" (click)="addMore()">Add More</button>
+      </li>
+
+      <li class="list-group-item" *ngIf="adding">
+
+        <input type="text" name="" class="form-control" [(ngModel)]="inputHero">
+
+        <button class="btn btn-success mt-2" [disabled]="!inputHero" (click)="addHero()">Add</button>
+      </li>
+
+    </ul>
+  </div>
+</div>
